@@ -69,9 +69,9 @@ form = '''<!DOCTYPE html>
 </pre>
 '''
 
-class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
-	"This is an HTTPServer that supports thread-based concurrency."
-	return
+#class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
+#	"This is an HTTPServer that supports thread-based concurrency."
+
 
 def CheckURI(uri, timeout=5):
     '''Check whether this URI is reachable, i.e. does it return a 200 OK?
