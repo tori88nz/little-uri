@@ -69,8 +69,8 @@ form = '''<!DOCTYPE html>
 </pre>
 '''
 
-#class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
-#	"This is an HTTPServer that supports thread-based concurrency."
+class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
+    "This is an HTTPServer that supports thread-based concurrency."
 
 
 def CheckURI(uri, timeout=5):
@@ -156,8 +156,6 @@ class Shortener(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/plain; charset = utf-8')
             self.end_headers()
             self.wfile.write("Couldn't fetch URI: '{}'. Sorry!".format(longuri).encode())
-
-            raise NotImplementedError("Step 5 isn't written yet!")
 
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 8000)) # Use PORT if its there
